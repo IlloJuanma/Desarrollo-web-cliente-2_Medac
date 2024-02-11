@@ -1,0 +1,17 @@
+.caja{
+    width: 100px;
+    height: 100px;
+    color: black;
+    display: inline-block;
+    text-align: center;
+}
+#div1{
+    background-color: red;
+}
+#div2{
+    background-color: black;
+    color: white;
+}
+#div3{
+    background-color: aqua;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+    <script src="11.js" defer></script>
+    <!-- Crea un formulario con los siguientes campos:
+• DNI: 8 números y una letra.
+• Nombre: uno o dos nombres.
+• Apellidos: uno o dos apellidos.
+• Fecha de nacimiento: formato dd/mm/yyyy.
+• Web personal: formato https://www.algo.tresletras
+• Contraseña: entre 8 y 12 caracteres.
+• Un botón para resetear el formulario.
+• Un botón para enviar el formulario.
+Haciendo uso de JavaScript pero sin usar expresiones regulares1, cuando se pulse el
+botón correspondiente, valida el formulario siguiendo las normas que se detallan a
+continuación y envía el resultado a otra página que muestre un mensaje de que todo ha
+salido bien.
+El formulario estará correcto sí y solo sí:
+• Ningún campo se queda vacío
+• El DNI tiene una longitud de 9
+• La fecha de nacimiento tiene el formato correcto.
+• Hay una o dos palabras en los campos nombre y apellidos.
+• El campo de la web debe empezar por https://
+• La longitud de la contraseña es correcta. -->
+</head>
+<body>
+    <h2>El del registro</h2>
+    <form action="" name="formulario">
+        <label>Introduce DNI</label>
+        <input type="text" name="dni">
+        <br><br>
+        <label>Nombre</label>
+        <input type="text" name="nombre">
+        <br><br>
+        <label>Apellidos</label>
+        <input type="text" name="apellidos">
+        <br><br>
+        <label>Fecha de Nacimiento</label>
+        <input type="text" name="nacimiento">
+        <br><br>
+        <label>Web personal</label>
+        <input type="text" name="web">
+        <br><br>
+        <label>Contraseña</label>
+        <input type="text" name="pass">
+        <br><br>
+        <input type="reset">
+        <input type="submit" name="enviar" value="Enviar">
+    </form>  
+</body>
+</html>

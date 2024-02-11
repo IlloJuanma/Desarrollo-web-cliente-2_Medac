@@ -1,0 +1,61 @@
+<!-- Crear un menú vertical con efecto acordeón usando los siguientes apartados:
+• Inicio
+◦ Portada.
+◦ Acerca de mi.
+◦ Mis fotos.
+• Proyectos
+◦ Web Apps.
+◦ Mobile Apps.
+◦ Juegos.
+• Portfolio
+◦ Páginas webs.
+◦ Software.
+• Contacto
+A tener en cuenta:
+• El menú debe tener una maquetación en CSS.
+• Los subapartados permanecen ocultos hasta que se pulsa sobre el apartado
+correspondiente.
+• Al abrir un bloque de subapartados, se cierran los demás-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+    <link rel="stylesheet" href="css/ej14.css">
+    <script src="ej14.js" defer></script>
+</head>
+<body>
+    <h2>Ejercicio 14</h2>
+    <div class="menu">
+        <div class="menu-item">
+            <a href="#">Inicio</a>
+            <div class="submenu">
+                <a href="#">Portada</a>
+                <a href="#">Acerca de mi</a>
+                <a href="#">Mis fotos</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="#">Proyectos</a>
+            <div class="submenu">
+                <a href="#">Web Apps</a>
+                <a href="#">Mobile Apps</a>
+                <a href="#">Juegos</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="#">Portfolio</a>
+            <div class="submenu">
+                <a href="#">Páginas webs</a>
+                <a href="#">Software</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+    
+</body>
+</html>

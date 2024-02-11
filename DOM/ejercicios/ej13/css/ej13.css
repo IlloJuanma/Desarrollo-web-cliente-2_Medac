@@ -1,0 +1,10 @@
+.spoiler-contenido{
+    display: none;
+}
+
+.botonSpoiler{
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestor de Gastos</title>
+    </head>
+    <body>
+        <h1>Gestor de Gastos</h1>
+        <!-- Formulario de gastos -->
+        <form id="formularioGastos">
+            <label for="nombreGasto">Nombre del gasto:</label>
+            <input type="text" id="nombreGasto" placeholder="Ejemplo: Comida"
+                required>
+            <label for="cantidadGasto">Cantidad gastada:</label>
+            <input type="number" step="0.01" id="cantidadGasto" placeholder="Ejemplo: 20"
+                required>
+
+            <button type="submit">Agregar gasto</button>
+        </form>
+
+        <!-- Lista de gastos y total -->
+        <h2>Lista de gastos</h2>
+        <ul id="listaGastos">
+
+        </ul>
+        <h2>Total gastado</h2>
+        <p id="totalGastado">0.00€</p>
+
+        <script>
+        //Variables para almacenar los gastos
+        let gastos =[];
+
+        //Variables para los campos de entrada
+        let nombreGastoInput = document.getElementById("nombreGasto");
+        let cantidadGastoInput = document.getElementById("cantidadGasto");
+
+        //Variables para el formulario
+        let formularioGastos = document.getElementById("formularioGastos");
+
+        //Variables para el área o lista de gastos y total gastado
+        let listaGastos = document.getElementById("listaGastos");
+        let totalGastado = document.getElementById("totalGastado");
+
+        //Funcion para agregar un nuevo gasto
+        function agregarGasto(){
+            //Obtener el nombre y la cantidad del gasto ingresados por el usuario
+            let nombre = nombreGastoInput.value;
+            let cantidad = parseFloat(cantidadGastoInput.value);
+
+            //Validar que el campo nombre no esté vacio y que la cantidad sea válido
+            if(nombre.trim() === "" || isNaN(cantidad) || cantidad <=0){
+                alert("Por favor, ingrese nombre válido y cantidad válida");
+                return; // Salir d ela funcion si los datos no son válidos
+            }
+
+            //Crear un objeto para representar el gasto
+            let gasto ={
+                nombre: nombre,
+                cantidad : cantidad
+            };
+
+            //Agregar el objeto gasto al array de gastos
+            gastos.push(gasto);
+
+            //Limpiar los campos de entrada
+            nombreGastoInput.value = "";
+            cantidadGastoInput.value = "";
+
+            //Llamar a la funcion para actualizar la lista y total gastado
+            actualizarListaGastos();
+        }
+
+        //Agregar el evento de envio del formulario
+        formularioGastos.addEventListener("submit", function(event){
+            event.preventDefault(); //Evitar que el formulario se envie de forma predeterminada
+            agregarGasto(); // Llamar a la funcion para agregar un gasto
+        });
+
+        //Funcion para actualizar la lista de gastos
+        function actualizarListaGastos(){
+            //Limpiar la lista de gastos
+            listaGastos.innerHTML = "";
+        
+
+            //Inicializar el total gastado
+            let total =0;
+
+            //Recorrer el array de gastos
+            for(let i =0; i< gastos.length; i++){
+                let gasto = gastos[i];
+
+                //Crear un elemento de la lista para mostrar ese gasto
+                let elementoLista = document.createElement("li");
+                elementoLista.textContent = `${gasto.nombre}: ${gasto.cantidad.toFixed(2)}€`;
+
+                //Agregar el elemento de lista a la lista gastos
+                listaGastos.appendChild(elementoLista);
+
+                //Sumar la cantidad del gasto al total
+                total += gasto.cantidad;
+            }
+
+            //Mostrar el total gastado en el elemento "totalGastado"
+            totalGastado.textContent = `Total Gastado: ${total.toFixed(2)}€`;
+
+        }
+    </script>
+
+    </body>
+</html>

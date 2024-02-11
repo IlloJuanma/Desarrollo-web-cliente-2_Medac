@@ -1,0 +1,56 @@
+:root{
+    --tamano: 100px;
+}
+.container{
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+.container p{
+    color: black;
+}
+.div1{
+    width: var(--tamano);
+    height: var(--tamano);
+    background-color: aqua;
+    margin: 10px 0;
+}
+.div2{
+    width: var(--tamano);
+    height: var(--tamano);
+    background-color: lightseagreen;
+    margin: 10px 0;
+
+}
+.div3{
+    width: var(--tamano);
+    height: var(--tamano);
+    background-color: darksalmon;
+    margin: 10px 0;
+
+}
+.div4{
+    width: var(--tamano);
+    height: var(--tamano);
+    background-color: chartreuse;
+    margin: 10px 0;
+}
+.final{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    font-size: 30px;
+}
+button{
+    font-size: 30px;
+    background-color: lightblue;
+    border-radius: 10%;
+    padding: 8px;
+    margin: 10px auto;
+}
+button:hover{
+    background-color: darkgray;
+    transition: 2s;
+}

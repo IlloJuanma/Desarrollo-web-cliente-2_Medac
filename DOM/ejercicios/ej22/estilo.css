@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    z-index: 1;
+    overflow: hidden;
+}
+.contenedor{
+    position: relative;
+    cursor: pointer;
+}
+.imagen{
+    width: 640px;
+    height: 360px;
+    transition: transform 0.3s;
+}
+.fondo{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <!-- Interfaz simple que incluye dos campos de entrada para numeros, botones
+    para las operaciones y un párrafo para mostrar el resultado-->
+    <input type="number" id="numero1" placeholder="Numero 1">
+    <input type="number" id="numero2" placeholder="Numero 2">
+    <button id="sumar">Sumar</button>
+    <button id="restar">Restar</button>
+    <button id="multiplicar">Multiplicar</button>
+    <button id="dividir">Dividir</button>
+    <p id="resultado"></p>
+
+    <script>
+        let botonSumar = document.getElementById("sumar");
+        let botonRestar = document.getElementById("restar");
+        let botonMultiplicar = document.getElementById("multiplicar");
+        let botonDividir = document.getElementById("dividir");
+        let resultadoParrafo = document.getElementById("resultado");
+
+        botonSumar.addEventListener("click", function(){
+            let numero1 = parseFloat(document.getElementById("numero1").value);
+            let numero2 = parseFloat(document.getElementById("numero2").value);
+            let resultado = numero1 + numero2;
+            resultadoParrafo.innerText = "Resultado suma: " + resultado;
+        });
+        botonRestar.addEventListener("click", function(){
+            let numero1 = parseFloat(document.getElementById("numero1").value);
+            let numero2 = parseFloat(document.getElementById("numero2").value);
+            let resultado = numero1 - numero2;
+            resultadoParrafo.innerText = "Resultado resta: " + resultado;
+        });
+        botonMultiplicar.addEventListener("click", function(){
+            let numero1 = parseFloat(document.getElementById("numero1").value);
+            let numero2 = parseFloat(document.getElementById("numero2").value);
+            let resultado = numero1 * numero2;
+            resultadoParrafo.innerText = "Resultado multiplicar: " + resultado;
+        });
+        botonDividir.addEventListener("click", function(){
+            let numero1 = parseFloat(document.getElementById("numero1").value);
+            let numero2 = parseFloat(document.getElementById("numero2").value);
+            if(numero2 === 0){
+                resultadoParrafo.innerText = "No se puede dividir por cero"
+
+            }else{
+                let resultado = numero1 / numero2;
+                resultadoParrafo.innerText = "Resultado dividir: " + resultado;
+            }
+        });
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+#resultado{
+    background-color: gray;
+    text-align: center;
+    font-size: 10em;
+    padding: 5%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.botones{
+    background-color: black;
+    padding: 5%;
+    justify-content:space-around;
+    display: flex;
+}
+
+.botones button{
+    border-radius: 10px;
+    background-color: rgb(251, 255, 0);
+    margin-left: 5%;
+    font-size: large;
+    transition: 1s;
+
+}
+.botones button{
+    padding: 20%;
+}
+
+.botonSuma button:hover{
+    transition: 1s;
+    background-color: rgb(3, 218, 56);
+    padding: 30%;
+    background-image:url("../cara-feliz.png");
+    background-size: cover;
+
+}
+.botonResta button:hover{
+    transition: 1s;
+    background-color: rgb(134, 34, 3);
+    padding: 30%;
+    background-image:url("../mareado.png");
+    background-size: cover;
+}
+.sumando {
+    background-image: url("../lobo.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .restando {
+    background-image: url("../travolta.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .nifunifa {
+    background-image: url("../como.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }

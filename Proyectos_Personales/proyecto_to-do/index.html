@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Proyecto To-Do</title>
+
+        <style>
+            .boton-eliminar{
+                padding: 3px 5px;
+                font-size: 12px;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>To-do List</h1>
+        <input type="text" id="nuevaTarea" placeholder="Añadir nueva tarea">
+        <button id="agregar">Agregar</button>
+        <ul id="listaTareas">
+            <!-- Aqui se agregaran las tareas -->
+        </ul>
+
+        <script>
+        let inputNuevaTarea = document.getElementById("nuevaTarea");
+        let botonAgregar = document.getElementById("agregar");
+        let listaTareas = document.getElementById("listaTareas");
+
+        //Array para almacenar las tareas
+        let tareas = [];
+
+        //Funcion para agregar una nueva tarea
+        function agregarTarea(){
+            let nuevaTarea = inputNuevaTarea.value;
+            //Si la cadena no es una cadena vacia, es decir contiene algun contenido...
+            if(nuevaTarea.trim()!== ""){
+                tareas.push(nuevaTarea);
+                actualizarListaTareas();
+                inputNuevaTarea.value = ""; // Limpiar el campo de entrada
+            }
+            actualizarListaTareas();
+        }
+
+        //Funcion para actualizar la lista de tareas
+        function actualizarListaTareas(){
+            listaTareas.innerHTML="" // Limpiar lista
+            for(let i =0; i <tareas.length; i++){
+                let tarea = tareas[i];
+                let elementoLista = document.createElement("li");
+
+                //Agregar texto a la tarea
+                elementoLista.textContent = tarea;
+
+                //Agregar un boton de eliminar
+                let botonEliminar = document.createElement("button");
+                botonEliminar.textContent="Eliminar";
+                botonEliminar.className="boton-eliminar";
+                botonEliminar.addEventListener("click", function(){
+                    //Preguntar al usuario si está seguro de eliminar la tarea
+                    let confirmacion = confirm("Estás seguro de eliminar esta tarea?")
+                    //Confirm devuelve un booleano
+                    if(confirmacion){
+                        //Eliminar tarea
+                        tareas.splice(i,1);
+                        actualizarListaTareas();
+                    }
+                })
+                //Agregar el boton de eliminar al elemento de la lista
+                elementoLista.appendChild(botonEliminar);
+
+                //Agregar elemento de la lista a la lista 
+                listaTareas.appendChild(elementoLista);
+            }
+        }
+
+        //Agregar una tarea cuando se hace clic en el boton "Agregar"
+        botonAgregar.addEventListener("click", agregarTarea);
+
+        //Agregar una tarea cuando se presiona Enter en el campo de entrada
+        inputNuevaTarea.addEventListener("keydown", function(event){
+            if(event.key == "Enter"){
+                agregarTarea();
+            }
+        });
+        actualizarListaTareas();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Adivinator</title>
+    </head>
+    <body>
+        <h1>Adivina el número</h1>
+        <p>Intenta adivinar un nímero entre 1 y 100:</p>
+        <input type="text" id="numeroAdivinar" min="1" max="100" />
+        <button id="verificar">Verificar</button>
+        <p id="resultado"></p>
+        <p id="error" style="color: red;"></p>
+
+        <script>
+      //Codigo javascript.
+      //Generar un número aleatorio entre 1 y 100
+      let numeroAdivinar = Math.floor(Math.random() * 100);
+      let botonVerificar = document.getElementById("verificar");
+      let resultadoParrafo = document.getElementById("resultado");
+      //Comprobar número ingresado
+      let errorParrafo = document.getElementById("error");
+      let valido = true;
+
+      botonVerificar.addEventListener("click", function () {
+        //Obtener el número ingresado por el jugador
+        let numeroIngresado = parseInt(
+          document.getElementById("numeroAdivinar").value
+        );
+        //Verificar si el número ingresado es válido
+        //Todo este código es inútil, porque seria mucho más fácil cambiar el type del input donde
+        //se ingresa el numero a adiviniar a "type = number"...
+        if(isNaN(numeroIngresado) || numeroIngresado < 1 || numeroIngresado > 100){
+            errorParrafo.textContent = "Error opción no valida";
+            resultadoParrafo.textContent = ""; //Limpia resultado anterior
+            valido = false;
+        }else{
+            errorParrafo.textContent = ""; //Limpiar mensaje de error anterior
+            valido = true;
+        }
+
+        //Verificar si el número es correcto
+        if(valido){
+        if (numeroIngresado === numeroAdivinar) {
+          resultadoParrafo.textContent = "¡Correcto!";
+        } else if (numeroIngresado < numeroAdivinar) {
+          resultadoParrafo.textContent = "Intenta con un número mayor";
+        } else {
+          resultadoParrafo.textContent = "Intenta con un número menor";
+        }
+    }
+      });
+    </script>
+    </body>
+</html>

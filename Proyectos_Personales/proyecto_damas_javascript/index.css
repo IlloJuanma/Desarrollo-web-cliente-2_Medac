@@ -1,0 +1,78 @@
+:root {
+    --tamanio-casillero: 75px;
+    --tamanio-ficha: calc(var(--tamanio-casillero)* 0.9);
+    --estilo-borde: 2px solid rgb(83, 83, 83);
+    --color-casillero-a: #d6c3a4;
+    --color-casillero-b: #a17e62;
+    --color-ficha-a: #292929;
+    --color-ficha-b: #770707;
+}
+
+/* ELEMENTOS */
+body {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+h1{
+    text-align: center;
+}
+
+/* CLASES */
+.tablero {
+    margin: 0 auto;
+    border: var(--estilo-borde);
+}
+
+.fila {
+    display: flex;
+}
+
+.fila:nth-child(2n+1) .casillero:nth-child(2n+1) {
+    background-color: var(--color-casillero-a);
+}
+
+.fila:nth-child(2n+1) .casillero:nth-child(2n+2) {
+    background-color: var(--color-casillero-b);
+}
+
+.fila:nth-child(2n+2) .casillero:nth-child(2n+1) {
+    background-color: var(--color-casillero-b);
+}
+
+.fila:nth-child(2n+2) .casillero:nth-child(2n+2) {
+    background-color: var(--color-casillero-a);
+}
+
+.casillero {
+    width: var(--tamanio-casillero);
+    height: var(--tamanio-casillero);
+    border: var(--estilo-borde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ficha {
+    box-sizing: border-box;
+    width: var(--tamanio-ficha);
+    height: var(--tamanio-ficha);
+    border-radius: 50%;
+    border: 8px double;
+}
+
+.ficha-reina {
+    border: 18px double;
+}
+
+.ficha-os {
+    background-color: var(--color-ficha-a);
+    border-color: var(--color-ficha-a);
+}
+
+.ficha-cl {
+    background-color: var(--color-ficha-b);
+    border-color: var(--color-ficha-b);
+}

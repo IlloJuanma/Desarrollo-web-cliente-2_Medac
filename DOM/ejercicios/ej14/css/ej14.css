@@ -1,0 +1,33 @@
+.menu {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+}
+
+.menu-item {
+    border-top: 1px solid #444;
+}
+
+.menu-item a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu-item a:hover {
+    background-color: #555;
+}
+
+.submenu {
+    display: none;
+}
+.submenu a {
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #ddd;
+}
+
+.submenu a:hover {
+    background-color: #444;
+}
